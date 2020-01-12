@@ -1,0 +1,44 @@
+CCFLAGS = -g ;
+HDRS = 	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2019\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2019\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include\\clang\\3.3"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\MSDTRedistributables\\SDKHeaderFiles\\8.1"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2019\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
+	;
+include Jamfile_instr ;
+LOCATE on "a.c" = "c:\\Users\\Emil\\Desktop\\tema 2" ;
+LOCATE on "a.h" = "c:\\Users\\Emil\\Desktop\\tema 2" ;
+LOCATE on "Functii_Utilitare.h" = "c:\\Users\\Emil\\Desktop\\tema 2" ;
+Object "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\a.obj" : "c:\\Users\\Emil\\Desktop\\tema 2\\a.c" ;
+FILENUM on "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\a.obj" = 1 ;
+DEFPROTS on "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\a.obj" = "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\a.obj.cvidefprots" ;
+OUTFILE on "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\a.obj" = "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\a.obj.out" ;
+PrjObjects += "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\a.obj" ;
+Object "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\resources.res" : "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\resources.in.rc" ;
+Depends "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\resources.res" : "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\manifest.xml" ;
+MainFromObjects "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\MGA Task2 CPI.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\MGA Task2 CPI.exe" : "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\link_options.txt" ;
+Depends "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\MGA Task2 CPI.exe" : "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\resources.res" ;
+Depends all : "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\MGA Task2 CPI.exe" ;
