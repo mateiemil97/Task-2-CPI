@@ -4,13 +4,15 @@
 #include <userint.h>
 #include "a.h"
 
+#define POINTS_PER_SAMPLE 10
+#define SAMPLE_PERIOD_PROPORTION 1 //0.02 init
+#define NR_SAMPLE_SHOW 20
+
 //##########  Variabile globale  ###################
 //handler pentru ferestre;
 static int panelHandle;
 //Perioada de esantionare;  
 double Tep;
-// perioada implementata la Timer pentru calcul direct a unei perioade de semnal sinusoidal formata din 20 de puncte
-double T_timer;
 //momentele de timp de esantionare:
 	//>>>>la momentul actual k>>>tk
 	//>>>>la momentul anterior(cu un pas de esantionare in urma tk-Te) avem k_1>>>tk_1  
@@ -18,7 +20,7 @@ double tpk,tpk_1;
 //Momentul de sincronizare
 double 	R_t_sincronizare;
 //Parametrii semnalului A-amplitudine=220V, T-perioada=0.02sec; 
-double A,T;
+double A=0,T;
 //selectie alternanta 1-pozitiva ; 0-negativa 
 int R_altenanta_p_n;
 
@@ -43,6 +45,27 @@ double U_filtratk_1, U_filtratk;
 /*OBS: Fisierul trebuie inclus in acest punct deoarece 
 functiile folosesc variabile globale declarate anterior*/
 #include "Functii_Utilitare.h" 
+#include "math.h"
+
+double getSignal(double inputSignal){
+	
+	double retVal = 0;
+	
+	if( 0 < inputSignal)
+		
+		retVal = A;
+	
+	else if( 0 > inputSignal)
+		
+		retVal = -A;
+		
+	else
+
+		retVal = 0;
+	
+	
+	return retVal;
+}
 
 //###################################################################################
 //					Functia main 
@@ -69,8 +92,7 @@ int CVICALLBACK Start_aplicatie_punte (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			//Setare perioada de esantionare initiala
-				Tep=0.001; // perioada de esantionare este de 100ms
-				T_timer=0.02;
+				Tep=0.001 * SAMPLE_PERIOD_PROPORTION; // perioada de esantionare este de 100ms
 			//Setare parametrii semnale ==>>relatii iterative
 				tpk_1=0;//moment de esantionare anterior
 				tpk=0;
@@ -82,7 +104,7 @@ int CVICALLBACK Start_aplicatie_punte (int panel, int control, int event,
 			R_t_sincronizare=0;
 			//valoarea intoarsa de functia Pi() o salvam in variabila pi
 				pi=Pi();
-				T=0.020;//frecventa 50 Hz => T=1/50=0.02 sec
+				T=0.02;//frecventa 50 Hz => T=1/50=0.02 sec
 				A=220; 
 				K_alpha=20; //Domeniu [0...100] K_alpha=((T/2)/Te)
 	//Parametrii Filtrului pentru tensiunea redresata
@@ -90,14 +112,14 @@ int CVICALLBACK Start_aplicatie_punte (int panel, int control, int event,
 		T_filtru=0.03;//
 			C_filtru=Tep/(Tep+T_filtru);
 			//nr.de alternante care se vor afisa
-				Nr=3;//Nr. alternante pentru afisare
+				Nr=NR_SAMPLE_SHOW;//Nr. alternante pentru afisare
 				cnt=1;
 				SetAxisRange (panelHandle,PANEL_GRAPH_RSIN, VAL_MANUAL, 0, Nr*20*Tep, VAL_NO_CHANGE,-220, 220);   
 				SetAxisRange (panelHandle,PANEL_GRAPH_RREDR, VAL_MANUAL, 0, Nr*20*Tep, VAL_NO_CHANGE,-220, 220);
 
 				
 			//Setare interval de timp si pornire Timer
-				SetCtrlAttribute (panelHandle,PANEL_TIMER, ATTR_INTERVAL,T_timer);
+				SetCtrlAttribute (panelHandle,PANEL_TIMER, ATTR_INTERVAL,Tep);
 					SetCtrlAttribute (panelHandle,PANEL_TIMER, ATTR_ENABLED,1); 
 		break;
 	}
@@ -112,6 +134,11 @@ int CVICALLBACK esantionare (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_TIMER_TICK:
+			
+			GetCtrlVal(panelHandle, PANEL_AMPLITUDINE, &A);
+			GetCtrlVal(panelHandle, PANEL_PERIOADA, &Tep);
+			
+		for( int points = 0; points < POINTS_PER_SAMPLE ; points++){
 			//citire de pe interfata grafica valoare Amplitudine Semnal
 			//   	GetCtrlVal (panelHandle, PANEL_AMPLITUDINE, &A);
 			//citire de pe interfata grafica valoare Perioada Semnal
@@ -122,12 +149,10 @@ int CVICALLBACK esantionare (int panel, int control, int event,
 				Nr_Te_intarziere=(int)(10-com_punte);
 			   		SetCtrlVal (panelHandle, PANEL_ALPHA, Nr_Te_intarziere);
 						GetCtrlVal (panelHandle, PANEL_ALPHA, &K_alpha); 
-//#####################################**************************************************########################################### 
-//#####################################**************************************************########################################### 
-for (int i=0; i<20; i++)   //calcul/implementare perioada semnal intr-o singura intrerupere de la Timer
-{
+
 //Sistemul monofazat faza R,de la Retea >>>>Generare semnale sinusoidal
 					R_fazak=A*sin( ((2*pi)/T)*tpk ); //FAZA R
+					R_fazak=getSignal(R_fazak);// generare semnal dreptunghiular
 					
 //######### R Transformator de Sincronizare cu trecerile prin "0" #######################################
 			if ( (R_fazak>=0)&&(R_fazak_1<0)&&(R_fazak_2<0) )
@@ -152,6 +177,7 @@ for (int i=0; i<20; i++)   //calcul/implementare perioada semnal intr-o singura 
 		//Faza R >> Redresare tensiune + Implemetarea GTO # comanda stare blocat sau saturat Transzistoare de mare putere
 			//Formatare Semnal redresat FAZA R de la Retea 
 			R_yk=A*sin( ((2*pi)/T)*tpk );//Generare sinusoida pt. redresare faza R
+			R_yk=getSignal(R_yk);// generare semnal dreptunghiular
 				if (R_yk<0)
 					{   R_yk=-R_yk;  //Semnal Redresat
 					}
@@ -164,7 +190,7 @@ for (int i=0; i<20; i++)   //calcul/implementare perioada semnal intr-o singura 
 				U_filtratk=U_filtratk_1+C_filtru*(R_yk-U_filtratk_1); //teansiunea efectiva furnizata de puntea redresoare
 		
 //#########//plotare Faza R semnal sinusoidal #######################################  
-		//R>>>Afisare Intarziere pulsuri cu valoarea K_alpha	
+		//R>>>Afisare Intarziere pulsuri cu valoarea K_alpha
 			if ( (tpk>=(R_t_sincronizare+K_alpha*Tep))&&(tpk<(R_t_sincronizare+K_alpha*Tep+Tep)) )
 				{
 					if ( R_altenanta_p_n==1 )
@@ -187,30 +213,26 @@ for (int i=0; i<20; i++)   //calcul/implementare perioada semnal intr-o singura 
 			}
 			PlotLine (panelHandle, PANEL_GRAPH_RSIN, tpk_1, R_fazak_1, tpk, R_fazak, VAL_RED);
 			PlotLine (panelHandle, PANEL_GRAPH_RREDR, tpk_1, U_filtratk_1, tpk, U_filtratk, VAL_RED);//Faza R semnal Redresat si Filtrat  
-		//reactualizare timp
-					tpk_1=tpk; 
-						tpk=tpk+Tep;
-		//reactualizare esantioane==>>cele actuale devin vechi pt o noua intrerupere de la TIMER  
-			R_fazak_2=R_fazak_1;		
-				R_fazak_1=R_fazak;
-					R_yk_1=R_yk;
-			//reactualizare Filtru
-			U_filtratk_1=U_filtratk;
-} //END FOR
-//#####################################**************************************************###########################################
-//#####################################**************************************************########################################### 
 
 //Refresh automat pentru a afisa "Oarecum" in timp real forma de unda a semnalului Redresat
 						if(tpk>(Nr*20*Tep))
 						{   
 							DeleteGraphPlot (panelHandle, PANEL_GRAPH_RSIN, -1, VAL_IMMEDIATE_DRAW );
 								DeleteGraphPlot (panelHandle, PANEL_GRAPH_RREDR, -1, VAL_IMMEDIATE_DRAW ); 
-							tpk_1=0;
-								tpk=Tep;
+							tpk_1=-Tep;
+								tpk=0;
 								R_t_sincronizare=0;
 						}
-		
-		
+			//reactualizare timp
+					tpk_1=tpk; 
+						tpk=tpk+Tep;
+			//reactualizare esantioane==>>cele actuale devin vechi pt o noua intrerupere de la TIMER  
+			R_fazak_2=R_fazak_1;		
+				R_fazak_1=R_fazak;
+					R_yk_1=R_yk;
+			//reactualizare Filtru
+			U_filtratk_1=U_filtratk;
+		}
 		
 		break;
 	}

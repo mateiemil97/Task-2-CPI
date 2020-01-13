@@ -1,0 +1,25 @@
+[getSignal]
+Class="Function"
+Prototype="double getSignal(double inputSignal);"
+SourceLocation="c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\a.c:50:1"
+
+[WinMain]
+Class="Function"
+Prototype="int WinMain(struct HINSTANCE__ *hInstance, struct HINSTANCE__ *hPrevInstance, char *lpszCmdLine, int nCmdShow);"
+SourceLocation="c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\a.c:73:1"
+
+[Start_aplicatie_punte]
+Class="Function"
+Prototype="int Start_aplicatie_punte(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\a.c:88:1"
+
+[esantionare]
+Class="Function"
+Prototype="int esantionare(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\a.c:131:1"
+
+[QuitCallback]
+Class="Function"
+Prototype="int QuitCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\a.c:245:1"
+

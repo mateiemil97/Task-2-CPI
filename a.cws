@@ -1,6 +1,6 @@
 [Workspace Header]
 Version = 1900
-Pathname = "/e/Facultate/CPI/CPI_2/MGA Task2 CPI.cws"
+Pathname = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/a.cws"
 CVI Dir = "/c/program files (x86)/national instruments/cvi2019"
 CVI Shared Dir = "/C/Program Files (x86)/National Instruments/Shared/CVI"
 CVI Pub Local Dir = "/C/ProgramData/National Instruments/CVI2019"
@@ -11,11 +11,11 @@ VXIplug&play Framework Dir = "/C/Program Files (x86)/IVI Foundation/VISA/winnt"
 VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
 Number of Projects = 1
 Active Project = 1
-Project 0001 = "MGA Task2 CPI.prj"
+Project 0001 = "a.prj"
 Drag Bar Left = 160
-Window Top = 57
+Window Top = 31
 Window Left = 1
-Window Bottom = 753
+Window Bottom = 727
 Window Right = 682
 Maximized = True
 Maximized Children = True
@@ -30,7 +30,7 @@ Save Changes Before Compiling = "Always"
 Hide Windows = False
 Break At First Statement = False
 Sort Type = "File Name"
-Number of Opened Files = 2
+Number of Opened Files = 3
 Window Confinement Region Enabled = True
 MainColumnWidth = 143
 FileDateColumnWidth = 70
@@ -46,43 +46,46 @@ Batch Build Release = False
 Batch Build Debug = False
 
 [File 0001]
-Path = "/e/Facultate/CPI/CPI_2/a.c"
+Path = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/a.c"
 File Type = "CSource"
-Disk Date = 3661784964
+Disk Date = 3661518742
 In Projects = "1,"
-Source Window State = "1,92,92,92,17,17,17,0,0,0,0,0,0,0,0,0,85,0,92,17,311,602,1,0,"
-Window Top = 33
-Window Left = 10
+Source Window State = "1,214,214,214,12,12,12,0,0,0,0,117,0,0,0,0,190,0,214,12,400,600,1,11,"
+Window Top = 31
 Window Z-Order = 1
 
 [File 0002]
-Path = "/e/Facultate/CPI/CPI_2/a.h"
+Path = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/Functii_Utilitare.h"
 File Type = "Include"
-Disk Date = 3660970854
+Disk Date = 3661085099
 In Projects = "1,"
-Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
+Source Window State = "1,39,39,39,0,0,0,0,0,0,0,0,0,0,0,0,13,0,39,0,349,683,1,0,"
+Window Top = 152
+Window Left = 74
+Window Z-Order = 3
 
 [File 0003]
-Path = "/e/Facultate/CPI/CPI_2/a.uir"
+Path = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/a.uir"
 File Type = "User Interface Resource"
-Disk Date = 3661782860
+Disk Date = 3661516882
 In Projects = "1,"
-Window Top = 64
-Window Left = 26
-Window Height = 296
-Window Width = 602
+Window Top = 32
+Window Left = 10
+Window Height = 349
+Window Width = 683
 Window Z-Order = 2
 
 [File 0004]
-Path = "/e/Facultate/CPI/CPI_2/Functii_Utilitare.h"
+Path = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/a.h"
 File Type = "Include"
-Disk Date = 3629898014
+Disk Date = 3661516648
 In Projects = "1,"
 Source Window State = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"
 
 [Tab Order]
-Tab 0001 = "/e/Facultate/CPI/CPI_2/a.c"
-Tab 0002 = "/e/Facultate/CPI/CPI_2/a.uir"
+Tab 0001 = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/Functii_Utilitare.h"
+Tab 0002 = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/a.uir"
+Tab 0003 = "/c/Users/Ezztaz/Downloads/CPI_Tasks/CPI_Tasks/00_Task/a.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True

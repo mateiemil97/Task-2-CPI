@@ -1,0 +1,1 @@
+-force-include-file "a.c";"c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\a.c" -force-include-file "a.h";"c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\a.h" -force-include-file "Functii_Utilitare.h";"c:\Users\Ezztaz\Downloads\CPI_Tasks\CPI_Tasks\00_Task\Functii_Utilitare.h" 

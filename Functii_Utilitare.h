@@ -37,3 +37,4 @@ int CVICALLBACK refresh_grafice (int panel, int control, int event,
 	}
 	return 0;
 }
+
