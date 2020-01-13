@@ -1,1 +1,1 @@
--force-include-file "a.c";"c:\Users\Emil\Desktop\tema 2\a.c" -force-include-file "a.h";"c:\Users\Emil\Desktop\tema 2\a.h" -force-include-file "Functii_Utilitare.h";"c:\Users\Emil\Desktop\tema 2\Functii_Utilitare.h" 
+-force-include-file "a.c";"e:\Facultate\CPI\CPI_2\a.c" -force-include-file "a.h";"e:\Facultate\CPI\CPI_2\a.h" -force-include-file "Functii_Utilitare.h";"e:\Facultate\CPI\CPI_2\Functii_Utilitare.h" 

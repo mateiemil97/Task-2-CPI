@@ -1,20 +1,20 @@
 [WinMain]
 Class="Function"
 Prototype="int WinMain(struct HINSTANCE__ *hInstance, struct HINSTANCE__ *hPrevInstance, char *lpszCmdLine, int nCmdShow);"
-SourceLocation="c:\Users\Emil\Desktop\tema 2\a.c:50:1"
+SourceLocation="e:\Facultate\CPI\CPI_2\a.c:50:1"
 
 [Start_aplicatie_punte]
 Class="Function"
 Prototype="int Start_aplicatie_punte(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\Emil\Desktop\tema 2\a.c:65:1"
+SourceLocation="e:\Facultate\CPI\CPI_2\a.c:65:1"
 
 [esantionare]
 Class="Function"
 Prototype="int esantionare(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\Emil\Desktop\tema 2\a.c:109:1"
+SourceLocation="e:\Facultate\CPI\CPI_2\a.c:109:1"
 
 [QuitCallback]
 Class="Function"
 Prototype="int QuitCallback(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Users\Emil\Desktop\tema 2\a.c:223:1"
+SourceLocation="e:\Facultate\CPI\CPI_2\a.c:223:1"
 

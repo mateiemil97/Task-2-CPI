@@ -1,19 +1,19 @@
 -nologo
--out:c:\Users\Emil\Documents\Task-2-CPI\cvibuild.MGA Task2 CPI\Debug\MGA Task2 CPI.exe
+-out:e:\Facultate\CPI\CPI_2\cvibuild.MGA Task2 CPI\Debug\MGA Task2 CPI.exe
 -arch:x86
 -timestamp
 -debug:2
--project:c:\Users\Emil\Documents\Task-2-CPI\MGA Task2 CPI.prj
--res:c:\Users\Emil\Documents\Task-2-CPI\cvibuild.MGA Task2 CPI\Debug\resources.res
+-project:e:\Facultate\CPI\CPI_2\MGA Task2 CPI.prj
+-res:e:\Facultate\CPI\CPI_2\cvibuild.MGA Task2 CPI\Debug\resources.res
 -entry:_CVIWinMainStartupCodeForDebugging@0
 -base:0x400000
--linked:c:\Users\Emil\Documents\Task-2-CPI\cvibuild.MGA Task2 CPI\Debug\linkersummary.txt
--dlldeps:c:\Users\Emil\Documents\Task-2-CPI\cvibuild.MGA Task2 CPI\Debug\dlldependencies.txt
--licensing:c:\Users\Emil\Documents\Task-2-CPI\cvibuild.MGA Task2 CPI\Debug\linkerlicensing.txt
--browsedeps:c:\Users\Emil\Documents\Task-2-CPI\cvibuild.MGA Task2 CPI\Debug\moduledependencies.txt
+-linked:e:\Facultate\CPI\CPI_2\cvibuild.MGA Task2 CPI\Debug\linkersummary.txt
+-dlldeps:e:\Facultate\CPI\CPI_2\cvibuild.MGA Task2 CPI\Debug\dlldependencies.txt
+-licensing:e:\Facultate\CPI\CPI_2\cvibuild.MGA Task2 CPI\Debug\linkerlicensing.txt
+-browsedeps:e:\Facultate\CPI\CPI_2\cvibuild.MGA Task2 CPI\Debug\moduledependencies.txt
 -stackreserve:1048576
 -stackcommit:4096
--in:c:\Users\Emil\Documents\Task-2-CPI\cvibuild.MGA Task2 CPI\Debug\a.obj
+-in:e:\Facultate\CPI\CPI_2\cvibuild.MGA Task2 CPI\Debug\a.obj
 -more:c:\program files (x86)\national instruments\cvi2019\bin\msvc\cvistart.lib
 -more:c:\program files (x86)\national instruments\cvi2019\bin\msvc\cvi.lib
 -more:c:\Program Files (x86)\National Instruments\CVI2019\bin\msvc\advanlys.lib

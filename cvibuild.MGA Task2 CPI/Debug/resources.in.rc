@@ -1,7 +1,7 @@
 #include "C:\Program Files (x86)\National Instruments\Shared\MSDTRedistributables\SDKHeaderFiles\8.1\winver.h"
 
 2 ICON "c:\\program files (x86)\\national instruments\\cvi2019\\bin\\default.ico"
-1 24 "c:\\Users\\Emil\\Documents\\Task-2-CPI\\cvibuild.MGA Task2 CPI\\Debug\\manifest.xml"
+1 24 "e:\\Facultate\\CPI\\CPI_2\\cvibuild.MGA Task2 CPI\\Debug\\manifest.xml"
 
 
 STRINGTABLE DISCARDABLE
@@ -22,13 +22,13 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "Campus Electrotehnica\0"
+            VALUE "CompanyName", "\0"
             VALUE "FileDescription", "MGA Task2 CPI (Debug x86)\0"
             VALUE "FileVersion", "1.0\0"
             VALUE "InternalName", "MGA Task2 CPI\0"
-            VALUE "LegalCopyright", "Copyright  Campus Electrotehnica 2020\0"
+            VALUE "LegalCopyright", "Copyright   2020\0"
             VALUE "OriginalFilename", "MGA Task2 CPI.exe\0"
-            VALUE "ProductName", "Campus Electrotehnica MGA Task2 CPI\0"
+            VALUE "ProductName", " MGA Task2 CPI\0"
             VALUE "ProductVersion", "1.0\0"
         END
     END
